@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
-  const userToken = JSON.parse(localStorage.getItem("book-user")!);
+const Navbar = () => {
+  const userToken = JSON.parse(localStorage.getItem("book-user"));
 
   const handleLogout = () => {
     localStorage.removeItem("book-user");
     window.location.href = "/";
   };
+
   return (
     <div>
       <div className="navbar bg-base-200">
@@ -83,4 +84,6 @@ export default function Navbar() {
       </div>
     </div>
   );
-}
+};
+
+export default Navbar;
