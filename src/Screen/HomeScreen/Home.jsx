@@ -21,7 +21,6 @@ const Home = () => {
   const token = JSON.parse(localStorage.getItem("book-user"))?.token;
   const handleWishList = async (id, title) => {
     const wishListData = await addWishList({ id, token, title });
-    //console.log(wishListData);
     toast(wishListData.data.msg);
   };
   return (
@@ -111,7 +110,6 @@ const Home = () => {
       </div>
       <div className="overflow-x-auto mx-10">
         <table className="table">
-          {/* head */}
           <thead>
             <tr>
               <th></th>
@@ -123,7 +121,6 @@ const Home = () => {
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
             {data?.books.map((res, idx) => (
               <tr>
                 <th>{idx + 1}</th>
